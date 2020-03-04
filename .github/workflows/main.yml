@@ -11,14 +11,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '12.x'
+        working-directory: pop
     - name: Installing Serverless Framework
       run: npm install -g serverless
-      with:
-          working-directory: pop
+      working-directory: pop
     - name: Install dependencies
       run: npm install
-      with:
-          working-directory: pop
+      working-directory: pop
 
   test:
     runs-on: ubuntu-latest
@@ -26,5 +25,4 @@ jobs:
     steps:
     - name: Show Serverless version
       run: serverless --version
-      with:
-          working-directory: pop
+      working-directory: pop
