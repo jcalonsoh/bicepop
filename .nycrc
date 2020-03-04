@@ -1,0 +1,9 @@
+{
+  "nyc": {
+    "all": true,
+    "check-coverage": true,
+    "reporter": "lcov",
+    "report-dir": "./.coverage",
+    "temp-dir": "./.nyc"
+  }
+}

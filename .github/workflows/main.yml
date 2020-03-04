@@ -28,3 +28,7 @@ jobs:
     steps:
     - name: Show Serverless version
       run: npx serverless --version
+    - name: Testing Serverles Functions
+      run: |
+        npm test
+        npx codecov
