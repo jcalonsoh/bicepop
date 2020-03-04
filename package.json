@@ -1,0 +1,23 @@
+{
+  "name": "bicepop",
+  "version": "1.0.0",
+  "description": "Testing AWS Serverless",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcalonsoh/bicepop.git"
+  },
+  "keywords": [
+    "serverless",
+    "aws"
+  ],
+  "author": "Juan Carlos Alonso Holmstron",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jcalonsoh/bicepop/issues"
+  },
+  "homepage": "https://github.com/jcalonsoh/bicepop#readme"
+}
