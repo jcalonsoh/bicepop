@@ -14,6 +14,6 @@ jobs:
       with:
         node-version: '12.x'
     - name: Installing Serverless Framework
-    - run: npm install -g serverless
+      run: npm install -g serverless
     - name: Install dependencies
       run: npm install
