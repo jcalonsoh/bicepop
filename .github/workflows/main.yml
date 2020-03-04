@@ -28,3 +28,5 @@ jobs:
       run: |
         npm test
         npx codecov
+      env:
+        CODECOV_TOKEN: aededb0b-b3f0-4540-b927-710e9ef1dbe5
