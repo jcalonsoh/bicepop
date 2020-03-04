@@ -17,11 +17,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-    - name: Installing Serverless Framework
-      run: npm install -g serverless
-      working-directory: pop
     - name: Install dependencies
-      run: npm install
+      run: |
+        npm install -g serverless
+        npm install
 
   test:
     runs-on: ubuntu-latest
