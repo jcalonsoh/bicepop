@@ -27,4 +27,4 @@ jobs:
     needs: build
     steps:
     - name: Show Serverless version
-      run: serverless --version
+      run: npx serverless --version
