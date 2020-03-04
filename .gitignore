@@ -230,5 +230,5 @@ modules.xml
 
 .serverless
 
-./coverage
+.coverage
 ./.nyc_output
