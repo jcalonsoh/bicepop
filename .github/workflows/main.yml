@@ -54,5 +54,5 @@ jobs:
         run: |
           mkdir tmp
           npx yarn service:start
-          npm integration
+          npx yarn integration
           npx yarn service:stop
