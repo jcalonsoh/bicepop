@@ -9,6 +9,7 @@ provider:
 
 plugins:
   - serverless-mocha-plugin
+  - serverless-offline
 
 functions:
   currentdate:

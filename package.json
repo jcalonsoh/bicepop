@@ -5,7 +5,10 @@
   "main": "app/date.js",
   "scripts": {
     "test": "npx nyc --reporter=lcov --report-dir=./.coverage sls invoke test",
-    "coverage": "npx coverage"
+    "coverage": "npx coverage",
+    "integration": "jest",
+    "service:start": "bash scripts/start-serverless-offline.sh",
+    "service:stop": "bash scripts/stop-serverless-offline.sh"
   },
   "repository": {
     "type": "git",
@@ -23,8 +26,12 @@
   "homepage": "https://github.com/jcalonsoh/bicepop#readme",
   "devDependencies": {
     "chai": "^4.2.0",
+    "jest": "^25.1.0",
     "mocha": "^7.1.0",
     "nyc": "^15.0.0",
-    "serverless-mocha-plugin": "^1.11.0"
+    "serverless-mocha-plugin": "^1.11.0",
+    "serverless-offline": "^5.12.1",
+    "shelljs": "^0.8.3",
+    "supertest": "^4.0.2"
   }
 }
