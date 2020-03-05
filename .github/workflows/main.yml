@@ -52,6 +52,7 @@ jobs:
           npm install
       - name: Testing integration with Jest
         run: |
+          mkdir tmp
           npx yarn service:start
           npm integration
           npx yarn service:stop
