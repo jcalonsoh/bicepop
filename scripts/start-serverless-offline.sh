@@ -12,3 +12,4 @@ npx sls offline start 2>1 > $TMPFILE &
 PID=$!
 echo $PID > .offline.pid
 
+sleep 5
