@@ -80,6 +80,7 @@ jobs:
           npm install -g serverless
           npm install -g serverless-offline
           npm install -g serverless-mocha-plugin
+          npm install
       - name: serverless deploy
         run: npx sls deploy -v
         env:
