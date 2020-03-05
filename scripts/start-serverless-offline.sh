@@ -8,7 +8,7 @@ if [ -f .offline.pid ]; then
 fi
 
 # shellcheck disable=SC2210
-sls offline start 2>1 > $TMPFILE &
+npx sls offline start 2>1 > $TMPFILE &
 PID=$!
 echo $PID > .offline.pid
 
