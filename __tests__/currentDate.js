@@ -8,7 +8,6 @@ describe("Test path date", () => {
     });
     test("It should response with JSON", async () => {
         let response = await app.get("/date");
-        console.log(response.body.toString());
         expect(response.headers['content-type'].toString()).toMatch(/json/);
     });
     test("It should body match Date string", async () => {
