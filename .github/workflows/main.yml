@@ -69,24 +69,22 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
+      - name: Install dependencies
+        run: |
+          npm install -g serverless
+          npm install -g serverless-mocha-plugin
       - name: serverless deploy
-        uses: serverless/github-action@master
-        with:
-          args: deploy
+        run: sls deploy -v
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: serverless info
-        uses: serverless/github-action@master
-        with:
-          args: info
+        run: sls info
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      - name: serverless info
-        uses: serverless/github-action@master
-        with:
-          args: invoke -f currentdate
+      - name: serverless test
+        run: sls invoke -f currentdate
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
