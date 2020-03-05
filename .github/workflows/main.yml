@@ -1,4 +1,4 @@
-name: CI
+name: CI/CD
 
 on: [push]
 
@@ -71,6 +71,10 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
       - name: Install dependencies
         run: |
           npm install -g serverless
