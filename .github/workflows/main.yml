@@ -65,26 +65,29 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: master
-      - name: Use Node.js
-        uses: actions/setup-node@v1
+      - uses: actions/cache@v1
         with:
-          node-version: '12.x'
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
       - name: Install dependencies
         run: |
           npm install -g serverless
+          npm install -g serverless-offline
           npm install -g serverless-mocha-plugin
       - name: serverless deploy
-        run: sls deploy -v
+        run: npx sls deploy -v
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: serverless info
-        run: sls info
+        run: npx sls info
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: serverless test
-        run: sls invoke -f currentdate
+        run: npx sls invoke -f currentdate
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
