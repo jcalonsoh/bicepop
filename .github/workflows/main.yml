@@ -62,7 +62,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: integration-test
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
         with:
           ref: master
       - name: npm install
